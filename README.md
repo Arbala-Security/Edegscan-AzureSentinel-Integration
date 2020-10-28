@@ -42,7 +42,7 @@ To do this, enable each logic app and run their triggers.
 
 ![enable](Images/enable.png)
 
-![trigger](Images/trigger.png)
+![trigger](Images/trigger​.png)
 
 Once this is done, restore the URIs in each logic app to their original text.
 
