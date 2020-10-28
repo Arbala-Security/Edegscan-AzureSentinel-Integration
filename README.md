@@ -40,9 +40,9 @@ Be sure to while first a copy of the original URI.
 By running the logic app without the conditional constraints, all existing vulnerability, host, and asset records in Edgescan will be integrated into Azure Sentinel.
 To do this, enable each logic app and run their triggers.
 
-![enable](Images/enable .png)
+![enable](Images/enable.png)
 
-![trigger](Images/trigger .png)
+![trigger](Images/trigger.png)
 
 Once this is done, restore the URIs in each logic app to their original text.
 
