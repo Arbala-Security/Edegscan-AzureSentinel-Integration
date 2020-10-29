@@ -28,8 +28,25 @@ Entries will be stored in Azure Sentinel **custom logs** with the following tabl
 
 
 ## Deploy the Logic Apps
+**edgescan_vulnerabilities**
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy1.json" target="_blank">
+    <img src="https://aka.ms/deploytoazurebutton""/>
+</a>
+      
+      
+**edgescan_assets**
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy2.json" target="_blank">
+    <img src="https://aka.ms/deploytoazurebutton""/>
+</a>
 
 
+**edgescan_hosts**
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmaster%2Fazuredeploy3.json" target="_blank">
+    <img src="https://aka.ms/deploytoazurebutton""/>
+</a>
 
 ## Usage
 For initial runs, the URI in the GET request should be modified, removing every character after the question mark.
