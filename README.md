@@ -35,11 +35,21 @@ Entries will be stored in Azure Sentinel **custom logs** with the following tabl
 </a>
       
       
+add the following condition to the URI after deployment: 
+
+?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}
+
+
 **edgescan_assets**
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy2.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
+
+      
+Optionally, add the following condition to the URI after deployment: 
+
+?c[created_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}
 
 
 **edgescan_hosts**
@@ -47,6 +57,11 @@ Entries will be stored in Azure Sentinel **custom logs** with the following tabl
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy3.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
+
+Optionally, add the following condition to the URI after deployment: 
+
+?c[updated_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}
+
 
 ## Usage
 For initial runs, the URI in the GET request should be modified, removing every character after the question mark.
