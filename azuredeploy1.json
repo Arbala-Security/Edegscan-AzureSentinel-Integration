@@ -322,7 +322,7 @@
                                                     "username": "[parameters('EdgescanUsername')]"
                                                 },
                                                 "method": "GET",
-                                                "uri": "[concat('https://', parameters('EdgescanURL'), '/api/v1/vulnerabilities.json?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}')]"
+                                                "uri": "[concat('https://', parameters('EdgescanURL'), '/api/v1/vulnerabilities.json')]"
                                             },
                                             "description": "Grab open vunerabilities"
                                         }
