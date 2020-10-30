@@ -30,38 +30,42 @@ Entries will be stored in Azure Sentinel **custom logs** with the following tabl
 ## Deploy the Logic Apps
 ### edgescan_vulnerabilities
 
+
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy1.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
       
       
-add the following condition to the URI after deployment: 
+add the following condition to the URI after deployment: **?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
 
-**?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
+
 
 
 
 ### edgescan_assets
+
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy2.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
 
       
-Optionally, add the following condition to the URI after deployment: 
+Optionally, add the following condition to the URI after deployment: **?c[created_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
 
-**?c[created_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
+
+
 
 
 ### edgescan_hosts
+
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy3.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
 
-Optionally, add the following condition to the URI after deployment: 
+Optionally, add the following condition to the URI after deployment: **?c[updated_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
 
-**?c[updated_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
+
 
 
 ## Usage
