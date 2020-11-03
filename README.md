@@ -91,7 +91,7 @@ To obtain items 2 and 3, in a separate tab, open to the workspace your logic app
 
 Click on the Agents management option.
 
-![connectionsworkspace1](Images/connectionsworkspace1.png)
+![connectionworkspace1](Images/connectionworkspace1.png)
 
 This will show you the workspace id and key, corresponding to items 3 and 2 respectively.
 
@@ -103,7 +103,7 @@ Now the logic app can be saved and enabled.
 
 Expand the HTTP Request Section.
 
-![uri](Images/logicappedituri.png)
+![uri](Images/logicappeditURI.png)
 
 To only ingest records created in the last year, for example, you would add the following string to the end of the existing URI to the necessary logic apps:
 
