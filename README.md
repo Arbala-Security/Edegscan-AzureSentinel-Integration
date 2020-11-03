@@ -34,7 +34,8 @@ Entries will be stored in Azure Sentinel **custom logs** with the following tabl
 </a>
       
       
-add the following condition to the URI after deployment: **?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
+add the following condition to the URI after deployment: 
+    ?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}
 
 
 
@@ -47,13 +48,6 @@ add the following condition to the URI after deployment: **?c[date_opened_after]
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
 
-      
-Optionally, add the following condition to the URI after deployment: **?c[created_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
-
-
-
-
-
 ### edgescan_hosts
 
 
@@ -61,7 +55,8 @@ Optionally, add the following condition to the URI after deployment: **?c[create
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
 
-Optionally, add the following condition to the URI after deployment: **?c[updated_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
+Optionally, add the following condition to the URI after deployment: 
+    **?c[updated_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}**
 
 
 ## Initial Setup
@@ -108,15 +103,15 @@ Expand the HTTP Request Section.
 To only ingest records created in the last year, for example, you would add the following string to the end of the existing URI to the necessary logic apps:
 
 ### edgescan_vulnerabilities
- **?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-365),'yy-MM-dd')}**
+    ?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-365),'yy-MM-dd')}
 
 
 ### edgescan_assets
- **?c[created_at]=@{formatDateTime(addDays(utcNow(),-365),'yy-MM-dd')}**
+    ?c[created_at]=@{formatDateTime(addDays(utcNow(),-365),'yy-MM-dd')}
 
 
 ### edgescan_hosts
-**?c[updated_at]=@{formatDateTime(addDays(utcNow(),-365),'yy-MM-dd')}**
+    ?c[updated_at]=@{formatDateTime(addDays(utcNow(),-365),'yy-MM-dd')}
 
   
 **Note** In the case of hosts, since no created date field appears to exist, the field indicating the last update is used instead.
