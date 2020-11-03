@@ -142,7 +142,7 @@ Search for "Run query and list results".
 
 ![actionadd1](Images/actionadd1.png)
 
-Select the information from the drop down lists matching what was used in the logic app deployment.
+Select the information from the drop down lists matching what was used in the logic app deployment. Be sure to select "Log Analytics Workspace" for the Resource Type.
 
 Add the query matching the logic app you are editing:
 
@@ -166,7 +166,22 @@ You may also rename the action to something more desriptive.
 
 **Note** since the volume of hosts and assets is expected to be much lower, no additional filters other than a date range are used in those queries.
 
+
+Below the query action, add another action, searching for "Control" and then selecting "For each".
+
+ ![actionadd3](Images/actionadd3.png)
+
+
+Select the value from the query result to loop through.
+
+![actionadd4](Images/actionadd4.png)
  
+ Add an action inside the for loop, searching for "append to string variable".
+ 
+![actionadd5](Images/actionadd5.png)
 
+Select the string variable referenced in the logic app and add paste the following in the "Expression" tab of the dynamic content value box:
 
+    concat(items('For_each')?['id_d'], ' ')
 
+![actionadd6](Images/actionadd6.png)
