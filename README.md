@@ -122,7 +122,7 @@ To only ingest records created in the last year, for example, you would add the 
 **Note** In the case of hosts, since no created date field appears to exist, the field indicating the last update is used instead.
   
 
-Once this is done, sure to save each logic app after making these changes. 
+Once this is done, be sure to save each logic app. 
 
 ## Initial Run
 To execute our initial run, enable each logic app and run their triggers.
