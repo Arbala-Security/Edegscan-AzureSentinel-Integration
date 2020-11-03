@@ -81,11 +81,11 @@ Next, expand the for each and the connection actions.
 
 Click on the exclamation point icon for the connection matching the logic app name.
 
-![connection1](Images/logicappconnection2.png)
+![connection2](Images/logicappconnection2.png)
 
 Enter the logic app name in for the Connection Name. 
 
-![connection1](Images/logicappconnection3.png)
+![connection3](Images/logicappconnection3.png)
 
 To obtain items 2 and 3, in a separate tab, open to the workspace your logic apps were deployed in. This can be found by navigating to the Log Analytics workspaces Service from the home page.
 
