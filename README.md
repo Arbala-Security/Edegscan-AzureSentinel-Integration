@@ -131,7 +131,7 @@ To execute our initial run, enable each logic app and run their triggers.
 
 ![trigger](Images/trigger​.png)
 
-Once these complete successfully, disable the logic apps. We do not want them to run again until we have made additions to check for duplicates and allow a smaller lookback window.
+Once these complete successfully, **disable the logic apps**. We do not want them to run again until we have made additions to check for duplicates and allow a smaller lookback window.
 
 If you do not wish to have constant polling of assets and hosts, these logic apps may be left disabled.
 
