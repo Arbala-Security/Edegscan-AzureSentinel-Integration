@@ -137,5 +137,41 @@ If you do not wish to have constant polling of assets and hosts, these logic app
 
 ## Final Set Up
 
+If you wish to have constant polling for new data, perform the following steps on each logic app:
+
+First, let's add the duplicate checking actions to our logic app.
+
+Edit the logic app and add a new action below the Initialize Variable action.
+
+Search for "Run query and list results".
+
+![actionadd1](Images/actionadd1.png)
+
+Select the information from the drop down lists matching what was used in the logic app deployment.
+
+Add the query matching the logic app you are editing:
+
+### edgescan_vulnerabilities
+ **edgescan_vulnerabilities_CL 
+| where date_opened_t >= now(-3d)**
+
+
+### edgescan_assets
+ **edgescan_assets_CL**
+
+
+### edgescan_hosts
+**edgescan_hosts_CL**
+
+Set the lookback range to 7 days.
+
+You may also rename the action to something more desriptive.
+
+![actionadd2](Images/actionadd2.png)
+
+**Note** since the volume of hosts and assets is expected to be much lower, no additional filters other than a date range are used in those queries.
+
+ 
+
 
 
