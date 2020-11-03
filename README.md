@@ -152,16 +152,16 @@ Select the information from the drop down lists matching what was used in the lo
 Add the query matching the logic app you are editing:
 
 ### edgescan_vulnerabilities
- **edgescan_vulnerabilities_CL 
-| where date_opened_t >= now(-3d)**
+    edgescan_vulnerabilities_CL 
+    | where date_opened_t >= now(-3d)
 
 
 ### edgescan_assets
- **edgescan_assets_CL**
+    edgescan_assets_CL
 
 
 ### edgescan_hosts
-**edgescan_hosts_CL**
+    edgescan_hosts_CL
 
 Set the lookback range to 7 days.
 
