@@ -124,7 +124,7 @@ To execute our initial run, enable each logic app and run their triggers.
 
 ![enable](Images/enable.png)
 
-![trigger](Images/trigger​.png)
+![trigger](Images/trigger.png)
 
 Once these complete successfully, **disable the logic apps**. We do not want them to run again until we have made additions to check for duplicates and allow a smaller lookback window.
 
@@ -134,7 +134,7 @@ If you do not wish to have constant polling of assets and hosts, these logic app
 
 If you wish to have constant polling for new data, perform the following steps on each logic app:
 
-First, let's add the duplicate checking actions to our logic app.
+First we’ll add the duplicate checking actions to our logic app.
 
 Edit the logic app and add a new action below the Initialize Variable action.
 
@@ -142,7 +142,7 @@ Search for "Run query and list results".
 
 ![actionadd1](Images/actionadd1.png)
 
-Select the information from the drop down lists matching what was used in the logic app deployment. Be sure to select "Log Analytics Workspace" for the Resource Type.
+Select the information from the drop-down lists matching what was used in the logic app deployment. Be sure to select "**Log Analytics Workspace**" for the Resource Type.
 
 Add the query matching the logic app you are editing:
 
@@ -160,14 +160,14 @@ Add the query matching the logic app you are editing:
 
 Set the lookback range to 7 days.
 
-You may also rename the action to something more desriptive.
+You may also rename the action to something more descriptive.
 
 ![actionadd2](Images/actionadd2.png)
 
 **Note** since the volume of hosts and assets is expected to be much lower, no additional filters other than a date range are used in those queries.
 
 
-Below the query action, add another action, searching for "Control" and then selecting "For each".
+Below the query action, add another action, searching for "**Control**" and then selecting "**For each**".
 
  ![actionadd3](Images/actionadd3.png)
 
@@ -176,12 +176,63 @@ Select the value from the query result to loop through.
 
 ![actionadd4](Images/actionadd4.png)
  
- Add an action inside the for loop, searching for "append to string variable".
+ Add an action inside the for loop, searching for "**Append to string variable**".
  
 ![actionadd5](Images/actionadd5.png)
 
-Select the string variable referenced in the logic app and add paste the following in the "Expression" tab of the dynamic content value box:
+Select the string variable referenced in the logic app and add paste the following in the "**Expression**" tab of the dynamic content value box:
 
     concat(items('For_each')?['id_d'], ' ')
 
 ![actionadd6](Images/actionadd6.png)
+
+Now navigate down to the bottom for loop of your logic app.
+
+Click "**Add an action**" inside the loop.
+
+As you did before, select the "**Control**" action.
+
+This time, click on "**Condition**".
+
+In the Condition box, select the string variable in your logic app, select "**does not contain**" from the middle drop down, then paste one of the following strings in the "Expression" tab of the dynamic content value box:
+
+### edgescan_vulnerabilities
+    string(items('For_Each_Vulnerability')['id'])
+
+
+### edgescan_assets
+    string(items('For_Each_Asset')['id'])
+
+
+### edgescan_hosts
+    string(items('For_Each_Host')['id'])
+    
+
+![actionadd7](Images/actionadd7.png)
+
+Finally, click and drag the "**Send data**" action into the "**True**" condition outcome box.
+
+![actionadd8](Images/actionadd8.png)
+
+
+With the duplicate checking logic implemented, now we'll adjust our data ingestion window.
+
+Expand the HTTP Request action in your logic app and add one of the following to the end of the URI, or, if you opted to add an additional filter earlier, replace that one with one of the following:
+
+### edgescan_vulnerabilities
+    ?c[date_opened_after]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}
+
+
+### edgescan_assets
+    ?c[created_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}
+
+
+### edgescan_hosts
+    ?c[updated_at]=@{formatDateTime(addDays(utcNow(),-2),'yy-MM-dd')}
+
+The end result should look like this:
+  
+![actionadd9](Images/actionadd9.png)
+
+  
+Save the logic app and enable it.
