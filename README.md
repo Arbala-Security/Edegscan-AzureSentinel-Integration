@@ -158,7 +158,7 @@ Add the query matching the logic app you are editing:
 ### edgescan_hosts
     edgescan_hosts_CL
 
-Set the lookback range to 7 days.
+Set the lookback range to **7 days**.
 
 You may also rename the action to something more descriptive.
 
