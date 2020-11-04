@@ -115,7 +115,7 @@ To execute our initial run, enable each logic app and run their triggers.
 
 ![enable](Images/enable.png)
 
-![trigger](Images/trigger.png)
+![trigger](Images/trigger​.png)
 
 Once these complete successfully, **disable the logic apps**. We do not want them to run again until we have made additions to check for duplicates and allow a smaller lookback window.
 
