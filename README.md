@@ -1,4 +1,4 @@
-# Edegscan-AzureSentinel-Integration
+# Edgescan-AzureSentinel-Integration
 
 ## Functionality
 This package contains three separate logic apps:
