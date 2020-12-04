@@ -32,6 +32,9 @@ Entries will be stored in Azure Sentinel **custom logs** with the following tabl
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy1.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy1.json" target="_blank">
+    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.png"/>
+</a>                                               
 
 
 ### edgescan_assets
@@ -40,15 +43,19 @@ Entries will be stored in Azure Sentinel **custom logs** with the following tabl
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy2.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
 </a>
-
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy2.json" target="_blank">
+    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.png"/>
+</a>
 
 ### edgescan_hosts
 
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy3.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton""/>
-</a>
-                                                  
+</a>                                                
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FArbala-Security%2FEdegscan-AzureSentinel-Integration%2Fmain%2Fazuredeploy3.json" target="_blank">
+    <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.png"/>
+</a>                                                 
 
 ## Initial Setup
 Each of these logic apps are disabled upon deployment, meaning they will not run until you enable them.
